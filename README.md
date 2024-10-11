@@ -17,16 +17,21 @@ To get started with this Flutter project, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/[project-name].git
-   cd [project-name]
+   git clone https://github.com/mik3yyy/Flutter-Bootstrap.git
+   cd Flutter-Bootstrap
    ```
 
-2. **Install dependencies**:
+2. **Initialize a new project**:
    ```bash
-   flutter pub get
+   ./init_project.sh projectName
+   cd projectName
    ```
 
-3. **Run the project**:
+3. **Initialize a new feature:**:
+   ```bash
+   ./init_feature.sh featureName
+   ```
+4. **Run the project:**:
    ```bash
    flutter run
    ```
