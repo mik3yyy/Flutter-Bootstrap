@@ -1,6 +1,3 @@
-Here’s the complete text you can copy and paste directly into your README file:
-
-```markdown
 # Flutter Project: [Project Name]
 
 This repository contains a Flutter project for [brief description of your project]. This README will guide you through the setup process, the architecture, and other important details.
@@ -104,11 +101,3 @@ Contributions are welcome! Please create a pull request or submit an issue for d
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-### Instructions:
-1. Replace placeholders (like `[Project Name]` and `yourusername`) with your actual project details.
-2. Customize the brief description of your project to provide context for potential users and contributors.
-
-Once you’ve made these adjustments, your README will be ready to go!
