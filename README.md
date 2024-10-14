@@ -8,6 +8,7 @@ This repository includes two Bash scripts, `init_project.sh` and `init_feature.s
 - [Architecture](#architecture)
 - [Code Snippets](#code-snippets)
 - [Project Breakdown](#project-breakdown)
+- [Feature Breakdown](#feature-breakdown)
 - [Contributing](#contributing)
 - [License](#license)
 - [Script Explanation](#script-explanation)
@@ -167,7 +168,7 @@ Here’s a breakdown of the folder structure:
 └── README.md
 ```
 
-## project Breakdown
+## Feature Breakdown
 
 Here’s a breakdown of the folder structure:
 
