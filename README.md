@@ -79,8 +79,28 @@ final sl = GetIt.instance;
 Future<void> init() async {
   sl.registerLazySingleton(() => LocalNotificationService());
   // Additional services...
+
+    sl
+    ..registerFactory(() =>
+        ${featureNameCapitalized}Bloc(get${featureNameCapitalized}Data: sl()))
+    ..registerLazySingleton(() => Get${featureNameCapitalized}Data(repository: sl()))
+  
+
+    // AuthenticationHiveDataSource
+    ..registerLazySingleton<${featureNameCapitalized}Repository>(() =>
+        ${featureNameCapitalized}RepositoryImpl(remoteDataSource: sl(), hiveDataSource: sl()))
+    ..registerLazySingleton<${featureNameCapitalized}RemoteDataSource>(
+      () => ${featureNameCapitalized}RemoteDataSourceImpl(network: sl()),
+    )
+       ..registerLazySingleton<${featureNameCapitalized}HiveDataSource>(
+      () => ${featureNameCapitalized}HiveDataSourceImpl(),
+    )
+    ..registerLazySingleton(
+        () => Network(baseUrl: UrlConfig.baseUrl, showLog: true));
 }
 ```
+
+
 
 ## project Breakdown
 
@@ -145,6 +165,43 @@ Here’s a breakdown of the folder structure:
 ├── pubspec.yaml
 ├── .gitignore
 └── README.md
+```
+
+## project Breakdown
+
+Here’s a breakdown of the folder structure:
+
+```
+[project-name]/
+├── lib/
+│   ├── core/....
+│   ├── features/
+│   │   └── [feature-name]/
+│   │       ├── data/
+│   │       │   ├── datasources/
+│   │       │   │   ├── [feature-name]_hive_data_source.dart
+│   │       │   │   └── [feature-name]_remote_data_source.dart
+│   │       │   ├── models/
+│   │       │   │   └── [feature-name]_model.dart
+│   │       │   └── repositories/
+│   │       │       └── [feature-name]_repository_impl.dart
+│   │       ├── domain/
+│   │       │   ├── entities/
+│   │       │   │   └── [feature-name]_entity.dart
+│   │       │   ├── repositories/
+│   │       │   │   └── [feature-name]_repository.dart
+│   │       │   └── usecases/
+│   │       │       └── get_[feature-name]_data.dart
+│   │       ├── presentation/
+│   │       │   ├── blocs/
+│   │       │   │   ├── [feature-name]_state.dart
+│   │       │   │   ├── [feature-name]_event.dart
+│   │       │   │   └── [feature-name]_bloc.dart
+│   │       │   ├── views/
+│   │       │   │   └── [feature-name]_page.dart
+│   │       │   └── widgets/
+│   │       │       └── [feature-name]_widget.dart
+
 ```
 
 ## Script Explanation
